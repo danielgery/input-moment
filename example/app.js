@@ -16,7 +16,7 @@ class App extends Component {
   };
 
   handleSave = () => {
-    console.log('saved', this.state.m.format('llll'));
+    console.log('saved', this.state.m.format());
   };
 
   render() {
@@ -28,7 +28,7 @@ class App extends Component {
         <h2>{packageJson.description}</h2>
         <form>
           <div className="input">
-            <input type="text" value={this.state.m.format('llll')} readOnly />
+            <input type="text" value={this.state.m.format()} readOnly />
           </div>
           <InputMoment
             moment={this.state.m}

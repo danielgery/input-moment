@@ -15,6 +15,12 @@ export default class extends Component {
     this.props.onChange(m);
   };
 
+  changeSeconds = pos => {
+    const m = this.props.moment;
+    m.seconds(pos.x);
+    this.props.onChange(m);
+  };
+
   render() {
     const m = this.props.moment;
 
@@ -24,6 +30,8 @@ export default class extends Component {
           <span className="time">{m.format('HH')}</span>
           <span className="separater">:</span>
           <span className="time">{m.format('mm')}</span>
+          <span className="separater">:</span>
+          <span className="time">{m.format('ss')}</span>
         </div>
 
         <div className="sliders">
@@ -46,6 +54,15 @@ export default class extends Component {
             onChange={this.changeMinutes}
           />
         </div>
+        <div className="time-text">Seconds:</div>
+          <InputSlider
+            className="u-slider-time"
+            xmin={0}
+            xmax={59}
+            xstep={this.props.secStep}
+            x={m.second()}
+            onChange={this.changeSeconds}
+          />
       </div>
     );
   }

@@ -9,7 +9,8 @@ export default class InputMoment extends Component {
     prevMonthIcon: 'ion-ios-arrow-left',
     nextMonthIcon: 'ion-ios-arrow-right',
     minStep: 1,
-    hourStep: 1
+    hourStep: 1,
+    secStep: 1
   };
 
   state = {
@@ -35,6 +36,7 @@ export default class InputMoment extends Component {
       nextMonthIcon,
       minStep,
       hourStep,
+      secStep,
       onSave,
       ...props
     } = this.props;
@@ -72,6 +74,7 @@ export default class InputMoment extends Component {
             moment={m}
             minStep={this.props.minStep}
             hourStep={this.props.hourStep}
+            secStep={this.props.secStep}
             onChange={this.props.onChange}
           />
         </div>
